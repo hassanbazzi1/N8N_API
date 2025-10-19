@@ -46,7 +46,7 @@ builder.Services.AddSingleton<HttpClient>(_ =>
     };
 
     var loginBody = new StringContent(
-        "{\"emailOrLdapLoginId\":\"karimgsaikali2@gmail.com\",\"password\":\"Hostinger1801@\"}",
+        "{\"emailOrLdapLoginId\":\"example@gmail.com\",\"password\":\"example@123\"}",
         Encoding.UTF8,
         "application/json");
 
@@ -70,7 +70,7 @@ builder.Services.AddScoped<ICredentialServiceFactory, CredentialServiceFactory>(
 builder.Services.AddHttpClient<IWorkflowService, WorkflowService>(client =>
 {
     client.BaseAddress = new Uri("https://n8n.srv898423.hstgr.cloud");
-    client.DefaultRequestHeaders.Add("X-N8N-API-KEY","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NTQzOTYwNS01NWZkLTQ5Y2QtODY3Zi05ZjZjOTNiYmJiNTMiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzUzMzUxNDU5LCJleHAiOjE3NTU5MDAwMDB9.AsL_jhO0OG5qJatgb5XrLZQX1KrhLfOZkEMJ1_nxVH0"); client.DefaultRequestHeaders.Accept.Add(new("application/json"));
+    client.DefaultRequestHeaders.Add("X-N8N-API-KEY","YOUR-SECRET-KEY"); client.DefaultRequestHeaders.Accept.Add(new("application/json"));
 });
 
 var app = builder.Build();
